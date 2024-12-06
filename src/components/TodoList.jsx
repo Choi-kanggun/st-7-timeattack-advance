@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useTodosQuery } from "../hooks/useTodosQuery";
 
-export default function TodoList({ todos }) {
+export default function TodoList() {
   const navigate = useNavigate();
+  const { data: todos } = useTodosQuery();
+  console.log(todos);
   return (
     <ul style={{ listStyle: "none", width: 250 }}>
       {todos.map((todo) => (
